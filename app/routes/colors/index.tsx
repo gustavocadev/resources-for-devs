@@ -2,14 +2,14 @@ import type { LoaderFunction } from '@remix-run/node';
 import Card from '../../components/ui/Card';
 import { useLoaderData } from '@remix-run/react';
 import type { Resource } from '~/types/types';
-import { getResources } from '../../helpers/getResources.server';
+import { allResources } from '../../resources/data';
 
 type Loader = {
   colors: Resource[];
 };
 
 export const loader: LoaderFunction = async () => {
-  const { resources } = await getResources();
+  const resources = allResources;
 
   const colors = resources.filter(
     ({ categoryName }) => categoryName === 'Colores'

@@ -2,15 +2,15 @@ import type { LoaderFunction } from '@remix-run/node';
 import Card from '../../components/ui/Card';
 import { useLoaderData } from '@remix-run/react';
 import type { Resource } from '~/types/types';
-import { getResources } from '../../helpers/getResources.server';
 import { getScreenshots } from '../../helpers/getScreenshots';
+import { allResources } from '../../resources/data';
 
 type Loader = {
   fonts: Resource[];
 };
 
 export const loader: LoaderFunction = async () => {
-  const { resources } = await getResources();
+  const resources = allResources;
 
   const fonts = resources.filter(
     ({ categoryName }) => categoryName === 'Fuentes'
