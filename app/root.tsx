@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/node"
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -6,20 +6,20 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react"
-import styles from "./tailwind.css"
-import Layout from "./components/layouts/Layout"
+} from '@remix-run/react';
+import styles from './tailwind.css';
+import Layout from './components/layouts/Layout';
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
-})
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }]
+  charset: 'utf-8',
+  title: 'Recursos para devs',
+  viewport: 'width=device-width,initial-scale=1',
+});
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 function Document({ children }: Props) {
   return (
@@ -28,14 +28,14 @@ function Document({ children }: Props) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-[#191919] px-[60px] text-white w-full">
+      <body className="bg-[#191919] px-[20px] text-gray-200 w-full">
         {children}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
       </body>
     </html>
-  )
+  );
 }
 
 export default function App() {
@@ -45,5 +45,5 @@ export default function App() {
         <Outlet />
       </Layout>
     </Document>
-  )
+  );
 }

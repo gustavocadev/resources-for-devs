@@ -1,16 +1,16 @@
-import { Link } from "@remix-run/react"
+import { Link } from '@remix-run/react';
 
 const sections = [
-  { name: "Imagenes", link: "/images" },
-  { name: "Colores", link: "/colors" },
-  { name: "Iconos", link: "/icons" },
-  { name: "Cursos", link: "/courses" },
-  { name: "Fuentes", link: "/fonts" },
-  { name: "Git", link: "/git" },
-  { name: "Docs", link: "/" },
-]
+  { name: 'Imagenes', link: '/images' },
+  { name: 'Colores', link: '/colors' },
+  { name: 'Iconos', link: '/icons' },
+  { name: 'Cursos', link: '/courses' },
+  { name: 'Fuentes', link: '/fonts' },
+  { name: 'Git', link: '/git' },
+  { name: 'Docs', link: '/' },
+];
 
-type Props = {}
+type Props = {};
 const Sidebar = (props: Props) => {
   return (
     <>
@@ -22,7 +22,7 @@ const Sidebar = (props: Props) => {
           <li className="w-full" key={section.name}>
             <Link
               to={section.link}
-              className="hover:bg-[#f622] p-[24px] block text-center"
+              className="hover:bg-[#A78BFA] p-[24px] block text-center hover:text-gray-900"
             >
               {section.name}
             </Link>
@@ -30,6 +30,6 @@ const Sidebar = (props: Props) => {
         ))}
       </ul>
     </>
-  )
-}
-export default Sidebar
+  );
+};
+export default Sidebar;

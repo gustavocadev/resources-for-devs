@@ -6,34 +6,34 @@ import { getResources } from '../../helpers/getResources.server';
 import { getScreenshots } from '../../helpers/getScreenshots';
 
 type Loader = {
-  icons: Resource[];
+  fonts: Resource[];
 };
 
 export const loader: LoaderFunction = async () => {
   const { resources } = await getResources();
 
-  const icons = resources.filter(
-    ({ categoryName }) => categoryName === 'Iconos'
+  const fonts = resources.filter(
+    ({ categoryName }) => categoryName === 'Fuentes'
   );
 
-  return { icons };
+  return { fonts };
 };
 
-export default function Icons() {
-  const { icons } = useLoaderData<Loader>();
+export default function Fonts() {
+  const { fonts } = useLoaderData<Loader>();
   return (
     <main className="px-[40px]">
-      <h1 className="my-2 text-4xl">Icons</h1>
+      <h1 className="my-2 text-4xl">Fonts</h1>
       <section className="grid grid-cols-3 gap-4">
-        {icons.map((icon) => {
-          const screenshotsIconsLinks = getScreenshots(icon.name);
+        {fonts.map((font) => {
+          const screenshotsFontLinks = getScreenshots(font.name);
           return (
             <Card
-              key={icon.name}
-              img={screenshotsIconsLinks}
-              title={icon.name}
-              description={icon.description}
-              link={icon.url}
+              key={font.name}
+              img={screenshotsFontLinks}
+              title={font.name}
+              description={font.description}
+              link={font.url}
             />
           );
         })}

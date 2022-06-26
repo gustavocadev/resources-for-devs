@@ -6,34 +6,34 @@ import { getResources } from '../../helpers/getResources.server';
 import { getScreenshots } from '../../helpers/getScreenshots';
 
 type Loader = {
-  icons: Resource[];
+  gitResources: Resource[];
 };
 
 export const loader: LoaderFunction = async () => {
   const { resources } = await getResources();
 
-  const icons = resources.filter(
-    ({ categoryName }) => categoryName === 'Iconos'
+  const gitResources = resources.filter(
+    ({ categoryName }) => categoryName === 'Git'
   );
 
-  return { icons };
+  return { gitResources };
 };
 
-export default function Icons() {
-  const { icons } = useLoaderData<Loader>();
+export default function Git() {
+  const { gitResources } = useLoaderData<Loader>();
   return (
     <main className="px-[40px]">
-      <h1 className="my-2 text-4xl">Icons</h1>
+      <h1 className="my-2 text-4xl">Git Resources</h1>
       <section className="grid grid-cols-3 gap-4">
-        {icons.map((icon) => {
-          const screenshotsIconsLinks = getScreenshots(icon.name);
+        {gitResources.map((gitResource) => {
+          const screenshotsGitLinks = getScreenshots(gitResource.name);
           return (
             <Card
-              key={icon.name}
-              img={screenshotsIconsLinks}
-              title={icon.name}
-              description={icon.description}
-              link={icon.url}
+              key={gitResource.name}
+              img={screenshotsGitLinks}
+              title={gitResource.name}
+              description={gitResource.description}
+              link={gitResource.url}
             />
           );
         })}

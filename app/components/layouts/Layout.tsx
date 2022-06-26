@@ -1,5 +1,5 @@
-import Sidebar from "./../ui/Sidebar";
-import Navbar from "../ui/Navbar";
+import Sidebar from './../ui/Sidebar';
+import Navbar from '../ui/Navbar';
 
 type Props = {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
       <section className="bg-[#202020] p-2 gap-8 flex-col flex min-h-screen w-3/12">
         <Sidebar />
       </section>
-      <section className="w-9/12">
+      <section className="w-full">
         <Navbar />
         {children}
       </section>
