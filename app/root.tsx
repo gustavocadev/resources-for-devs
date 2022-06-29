@@ -42,7 +42,7 @@ export default function App() {
   return (
     <Document>
       <Layout>
-        <Outlet />
+          <Outlet />
       </Layout>
     </Document>
   );

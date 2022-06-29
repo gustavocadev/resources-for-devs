@@ -22,9 +22,9 @@ export const loader: LoaderFunction = async () => {
 export default function Fonts() {
   const { fonts } = useLoaderData<Loader>();
   return (
-    <main className="px-[40px]">
+    <main className="px-2 sm:px-[40px]">
       <h1 className="my-2 text-4xl">Fonts</h1>
-      <section className="grid grid-cols-3 gap-4">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {fonts.map((font) => {
           const screenshotsFontLinks = getScreenshots(font.name);
           return (

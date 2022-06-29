@@ -22,7 +22,7 @@ const Sidebar = (props: Props) => {
           <li className="w-full" key={section.name}>
             <Link
               to={section.link}
-              className="hover:bg-[#A78BFA] p-[24px] block text-center hover:text-gray-900"
+              className="hover:bg-[#A78BFA] p-[24px] block text-center hover:text-gray-900 rounded"
             >
               {section.name}
             </Link>

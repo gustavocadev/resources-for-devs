@@ -8,7 +8,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <section className="flex">
-      <section className="bg-[#202020] p-2 gap-8 flex-col flex min-h-screen w-3/12">
+      <section className="bg-[#202020] p-2 gap-8 flex-col hidden sm:flex min-h-screen w-3/12">
         <Sidebar />
       </section>
       <section className="w-full">

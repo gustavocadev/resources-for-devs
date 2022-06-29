@@ -7,7 +7,7 @@ type Props = {
 
 const Card = ({ img, title, description, link }: Props) => {
   return (
-    <div className="max-w-xs rounded-md shadow-md dark:bg-[#202020] dark:text-gray-100">
+    <section className="w-full sm:max-w-xs rounded-md shadow-md dark:bg-[#202020] dark:text-gray-100">
       <img
         src={img}
         alt={description}
@@ -27,7 +27,7 @@ const Card = ({ img, title, description, link }: Props) => {
           Ir al recurso
         </a>
       </div>
-    </div>
+    </section>
   );
 };
 export default Card;
